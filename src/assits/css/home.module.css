@@ -1,0 +1,55 @@
+.bgCover {
+    position: relative;
+    height: 100vh;
+    background-image: url('./../imgs/banner1.jpg');
+    background-size: cover;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    border-top-left-radius: 25px;
+}
+
+.bgCover::after {
+    content: 'XIAO ZHI WEN';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFF;
+    font-size: 6vh;
+    opacity: 1;
+    animation: anamorphism 1.5s ease-in-out;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 15px;
+}
+
+.row {
+    padding: 0 20px;
+    animation: fromBottomToTop 1s ease-in-out;
+}
+
+.row .cover {
+    height: 400px;
+    object-fit: cover;
+}
+
+.row .introduce {
+    font-size: 28px;
+}
+
+.row .personInfo {
+    display: grid;
+    grid: auto / 1fr 1fr;
+    grid-gap: 20px;
+}
+
+/* 透明渐变效果 */
+@keyframes anamorphism {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fromBottomToTop {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0px); }
+}

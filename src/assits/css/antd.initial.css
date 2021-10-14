@@ -1,0 +1,34 @@
+#components-layout-demo-responsive .logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.site-layout-background {
+    background: #fff;
+}
+
+.ant-layout, .ant-menu, .ant-layout-sider, .ant-layout-header {
+    background: transparent !important;
+}
+
+.ant-layout-header {
+    height: 25px !important;
+}
+
+.ant-menu {
+    padding: 25px !important;
+}
+
+.ant-image {
+    display: block !important;
+}
+
+.ant-menu-item {
+    height: 25px !important;
+    border-radius: 10px !important;
+}
+
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: #beacdb !important;
+}
