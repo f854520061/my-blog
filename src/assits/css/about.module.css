@@ -1,0 +1,16 @@
+.bg {
+    background-image: url('./../imgs/banner3.jpg');
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+}
+
+.cover {
+    height: 350px !important;
+    object-fit: cover;
+}
+
+.personInfo {
+    display: grid;
+    grid: auto / 1fr 1fr;
+    grid-gap: 20px;
+}

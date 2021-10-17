@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Avatar, Layout, Menu } from 'antd'
 import { UserOutlined, VideoCameraOutlined } from '@ant-design/icons'
 import { useSelector } from 'react-redux'
@@ -16,6 +16,14 @@ const Layout_component = (props: any) => {
     const router: any = useSelector((state: rootReducerTypes) => state.router)
     // 默认选中
     const menuDefaultSelectedKeys = [router.location.pathname]
+
+    const [menuSelectedKeys, setMenuSelectedKeys] = useState(menuDefaultSelectedKeys)
+
+    useEffect(() => {
+        window.addEventListener('popstate', () => {
+            setMenuSelectedKeys([document.location.pathname])
+        })
+    }, [])
 
     return (
         <section className={Styles.layoutRoot}>
@@ -38,7 +46,10 @@ const Layout_component = (props: any) => {
                         theme="dark"
                         mode="inline"
                         defaultSelectedKeys={menuDefaultSelectedKeys}
+                        selectedKeys={menuSelectedKeys}
                         onClick={e => {
+                            document.documentElement.scrollTop = 0
+                            setMenuSelectedKeys([e.key])
                             history.push(e.key)
                         }}>
                         <Menu.Item key="/" icon={<UserOutlined />}>

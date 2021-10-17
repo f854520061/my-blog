@@ -18,7 +18,7 @@ const CardIframe = (props: cProps) => {
     }
     return (
         <>
-            <section style={{display: 'inline' }}>
+            <span style={{display: 'inline' }}>
                 <span style={{ color: '#5dd5c8', cursor: 'pointer' }} onClick={openLink}> {props.content} </span>
                 <Drawer title={props.content} width={'35vw'} visible={visible} onClose={() => setVisible(false)}>
                     <iframe 
@@ -31,7 +31,7 @@ const CardIframe = (props: cProps) => {
                         }}
                     ></iframe>
                 </Drawer>
-            </section>
+            </span>
         </>
     )
 }

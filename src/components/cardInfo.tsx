@@ -18,8 +18,9 @@ const CardInfo = (props: cProps) => {
 
     const scrollDoc = useCallback(() => {
         const scrollTop = document.documentElement.scrollTop
-        const top = Card.current.offsetTop
-        if (scrollTop >= (top - 700) && !childrenShow) {
+        const offsetHeight = document.documentElement.offsetHeight
+        const top = Card.current?.offsetTop
+        if (scrollTop >= (top - offsetHeight - 350) && !childrenShow) {
             updateChildrenShow(true)
             window.removeEventListener('scroll', scrollDoc)
         }
